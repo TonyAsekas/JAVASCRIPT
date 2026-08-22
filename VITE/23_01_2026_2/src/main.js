@@ -12,4 +12,3 @@ ${animales.map((animal) => `<li>${animal}</li>`.join(""))}
 document.querySelector("footer").innerHTML = `
 <p>Animales 2025</p>
 `
-
