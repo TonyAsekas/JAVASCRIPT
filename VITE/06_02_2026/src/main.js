@@ -1,9 +1,11 @@
 import './style.css'
 import Avatar from './components/Avatar'
-document.addEventListener("DOMContentLoaded", () =>{
-  document.querySelector("#app").innerHTML =`
-  ${Avatar("Peter Parker","https://wallpapers.com/images/thumbnail/animated-peter-parker-ch9qgnhdwr38u7uk.jpg" )}
-  ${Avatar("Matt Murdock")}
-  ${Avatar("Ciclope","https://imgproxy.domestika.org/unsafe/w:820/plain/src://content-items/006/775/638/Ciclope-XMEN-original.jpg?1610775175")}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#app").innerHTML = `
+    ${Avatar("Peter Parker", "https://i.pinimg.com/736x/05/82/0f/05820ffbb40e4679a91891016b858a8b.jpg")}
+    ${Avatar("Matt Murdock", undefined, "lg")}
+    ${Avatar("Ciclope", undefined, "sm")}
+    ${Avatar("Wolverine", "https://sm.ign.com/t/ign_latam/screenshot/default/wolverine-jackman_smx7.1280.jpg", "sm")}
   `
 })
