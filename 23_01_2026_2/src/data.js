@@ -4,3 +4,4 @@ const animales =[
     "Pato",
     "Tiburon "
 ]
+export default animales;
