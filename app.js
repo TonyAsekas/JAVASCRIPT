@@ -37,11 +37,29 @@ const renderWeather = (data) => {
 document.querySelector("#searchBtn").addEventListener("click", () => {
     const valorCiudad = document.querySelector("#city").value
     getWeather(valorCiudad)
+    document.querySelector("#city").value =""
+})
+
+//Añadimos un evento a la tecla Enter
+
+document.querySelector("#city").addEventListener("keydown", (ev) => {
+    if(ev.key === "Enter"){
+        const valorCiudad = document.querySelector("#city").value
+        getWeather(valorCiudad)
+        document.querySelector("#city").value =""
+    }
 })
 
 // Al arranque de la aplicacion al renderizar el DOM por completo,
 // se busca el tiempo predeterminado
 
     document.addEventListener("DOMContentLoaded", () => {
-        getWeather("Oviedo")
-    })
+        navigator.geolocation.getCurrentPosition((pos) => {
+           const coord = `${pos.coords.latitude} , ${pos.coords.longitude}`
+             if(coord){
+                getWeather(coord)
+             }else{
+             getWeather("Madrid")
+             }
+            })
+        })
